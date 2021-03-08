@@ -42,7 +42,14 @@ module.exports = {
         test: /\.less$/,
         use: [
           'style-loader',
-          'css-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              modules: {
+                localIdentName: "[local]--[hash:base64:5]",
+              }
+            }
+          },
           {
             loader: 'less-loader',
             options: {
@@ -51,7 +58,8 @@ module.exports = {
               }
             }
           }
-        ]
+        ],
+        exclude: /node_nodules/
       },
       { // 图片
         test: /\.(png|svg|jpg|gif)$/,
