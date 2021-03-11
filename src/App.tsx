@@ -1,8 +1,9 @@
 import * as React from 'react'
+import Designer from './Designer'
 
 const App = () => {
   return (
-    <div>App</div>
+    <Designer />
   )
 }
 
